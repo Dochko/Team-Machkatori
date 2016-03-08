@@ -10,11 +10,11 @@
     {
         private readonly Core core;
 
-        private List<string> shoppingArea1 = new List<string>();
+        private List<string> merchantItemsArea = new List<string>();
 
-        private List<string> shoppingArea2 = new List<string>();
+        private List<string> heroInventoryItemsArea = new List<string>();
 
-        private List<string> commandShow = new List<string>();
+        private List<string> statusArea = new List<string>();
 
         public ShoppingScreen(Core core)
         {
@@ -28,13 +28,26 @@
 
         private void ScreenClear()
         {
-            this.shoppingArea1.Clear();
-            this.shoppingArea2.Clear();
+            this.merchantItemsArea.Clear();
+            this.heroInventoryItemsArea.Clear();
         }
 
         private void FillArea(Hero hero, IMerchant merchant)
         {
-            DrawScreen.AddLineToBuffer(ref this.shoppingArea1, Environment.NewLine);
+            DrawScreen.AddLineToBuffer(ref this.merchantItemsArea, "Merchants Items:");
+            int i = 1;
+            foreach (var item in this.core.Merchant.MerchantItems)
+            {
+                DrawScreen.AddLineToBuffer(ref this.merchantItemsArea, i + ". " + item);
+                i++;
+            }
+
+            for (int j = i; j < 8; j++)
+            {
+                DrawScreen.AddLineToBuffer(ref this.merchantItemsArea, Environment.NewLine);
+            }
+
+
         }
     }
 }

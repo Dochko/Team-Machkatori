@@ -1,0 +1,19 @@
+﻿potion healthPotion Megakruv 50
+potion healthPotion Megakruv 50
+potion healthPotion Megakruv 50
+potion healthPotion Megakruv 50
+potion healthPotion Megakruv 50
+potion healthPotion Megakruv 50
+potion healthPotion Megakruv 50
+potion healthPotion Megakruv 50
+weapon axe Machkator 30 250
+weapon sword Ishivator 50 300
+armor body RussetArmor 50 500
+armor boots Galoshi 10 50
+weapon staff Apocalypse 35 350
+armor helm Sallet 15 65
+armor gloves SnowBall 5 15
+armor legs Gashti 10 55
+armor shield TowerWall 40 300
+weapon wand Criter 15 100
+weapon bow LongBow 60 700

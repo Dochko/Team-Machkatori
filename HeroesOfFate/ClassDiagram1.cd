@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HeroesOfFate.Events.HeroChangeLevelEventArgs" Collapsed="true">
+    <Position X="46.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Events\HeroChangeLevelEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.GameEngine.DrawScreen" Collapsed="true">
+    <Position X="43" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAACAAAAgAIAABIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameEngine\DrawScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.GameEngine.Engine" Collapsed="true">
+    <Position X="44.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABFAAAAAgSAAABAAAAAAAAAAAAAQIAQAAAAAAAAAA=</HashCode>
+      <FileName>GameEngine\Engine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.MainProgram" Collapsed="true">
+    <Position X="48.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>MainProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Characters.Character" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACAAAAAAAAAAAAAAAEAIAABEAAgABAAAAAAIAAAg=</HashCode>
+      <FileName>Models\Characters\Character.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesOfFate.Models.Characters.Heroes.Archer" Collapsed="true">
+    <Position X="14.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAABAAAAAAEABA=</HashCode>
+      <FileName>Models\Characters\Heroes\Archer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesOfFate.Models.Characters.Heroes.Hero" Collapsed="true">
+    <Position X="17" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAQQAAAACCAAEQgAQAAUBAAAEAoAiMAAAAhAAEgE=</HashCode>
+      <FileName>Models\Characters\Heroes\Hero.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesOfFate.Models.Characters.Heroes.Mage" Collapsed="true">
+    <Position X="17" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAABAAAAAAEABA=</HashCode>
+      <FileName>Models\Characters\Heroes\Mage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesOfFate.Models.Characters.Heroes.Warrior" Collapsed="true">
+    <Position X="19.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAABAAAAAAEABA=</HashCode>
+      <FileName>Models\Characters\Heroes\Warrior.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesOfFate.Models.Characters.Monsters.Boss" Collapsed="true">
+    <Position X="12.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAgBAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Models\Characters\Monsters\Boss.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Characters.Monsters.Goblin" Collapsed="true">
+    <Position X="1.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAgBAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Models\Characters\Monsters\Goblin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Characters.Monsters.Monster" Collapsed="true">
+    <Position X="7" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAgAAEAAEEAIABBACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Characters\Monsters\Monster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesOfFate.Models.Characters.Monsters.Ogre" Collapsed="true">
+    <Position X="3.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAgBAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Models\Characters\Monsters\Ogre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Characters.Monsters.Troll" Collapsed="true">
+    <Position X="5.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAgBAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Models\Characters\Monsters\Troll.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Characters.Monsters.Undead" Collapsed="true">
+    <Position X="8" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAgBAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Models\Characters\Monsters\Undead.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Characters.Monsters.Wolf" Collapsed="true">
+    <Position X="10.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAgBAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Models\Characters\Monsters\Wolf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Armors.Armor" Collapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Armors\Armor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Armors.Body" Collapsed="true">
+    <Position X="20.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Armors\Body.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Armors.Boots" Collapsed="true">
+    <Position X="9" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Armors\Boots.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Armors.Gloves" Collapsed="true">
+    <Position X="11.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Armors\Gloves.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Armors.Helm" Collapsed="true">
+    <Position X="13.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Armors\Helm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Armors.Legs" Collapsed="true">
+    <Position X="15.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Armors\Legs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Armors.Shield" Collapsed="true">
+    <Position X="18" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Armors\Shield.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Chests.Chest" Collapsed="true">
+    <Position X="23" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Items\Chests\Chest.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Chests.GoldChest" Collapsed="true">
+    <Position X="21.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgE=</HashCode>
+      <FileName>Models\Items\Chests\GoldChest.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Chests.ItemChest" Collapsed="true">
+    <Position X="24.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIIAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Chests\ItemChest.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Item" Collapsed="true">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAQQAAAAEAAAAAAAAAAABAAAAAQAAAAAAAgA=</HashCode>
+      <FileName>Models\Items\Item.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Potions.AttackPotion" Collapsed="true">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAgAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Potions\AttackPotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Potions.DefencePotion" Collapsed="true">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAgAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Potions\DefencePotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Potions.HealthPotion" Collapsed="true">
+    <Position X="6.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAgAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Potions\HealthPotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Potions.Potion" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Potions\Potion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Weapons.OneHWeapons.Axe" Collapsed="true">
+    <Position X="36" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Weapons\OneHWeapons\Axe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Weapons.OneHWeapons.HandCrossbow" Collapsed="true">
+    <Position X="40.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Weapons\OneHWeapons\HandCrossbow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Weapons.OneHWeapons.Mace" Collapsed="true">
+    <Position X="22.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Weapons\OneHWeapons\Mace.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Weapons.OneHWeapons.Sword" Collapsed="true">
+    <Position X="24.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Weapons\OneHWeapons\Sword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Weapons.OneHWeapons.Wand" Collapsed="true">
+    <Position X="27" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Weapons\OneHWeapons\Wand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Weapons.TwoHWeapons.Bow" Collapsed="true">
+    <Position X="29.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Weapons\TwoHWeapons\Bow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Weapons.TwoHWeapons.Greataxe" Collapsed="true">
+    <Position X="31.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Weapons\TwoHWeapons\Greataxe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Weapons.TwoHWeapons.Greatsword" Collapsed="true">
+    <Position X="33.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Weapons\TwoHWeapons\Greatsword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Weapons.TwoHWeapons.Staff" Collapsed="true">
+    <Position X="38.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Items\Weapons\TwoHWeapons\Staff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.Items.Weapons.Weapon" Collapsed="true">
+    <Position X="31.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Models\Items\Weapons\Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesOfFate.Models.NPC.Merchant" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\NPC\Merchant.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.265" Collapsed="true" />
+  </Class>
+  <Interface Name="HeroesOfFate.Contracts.IArcher" Collapsed="true">
+    <Position X="43" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Character Contracts\Hero Contracts\IArcher.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesOfFate.Contracts.IHero" Collapsed="true">
+    <Position X="43" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQQAAAACCAAAAAAQAAUBAAAAAIAgMAAAAgAAAAE=</HashCode>
+      <FileName>Contracts\Character Contracts\Hero Contracts\IHero.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesOfFate.Contracts.IInventory" Collapsed="true">
+    <Position X="44.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Character Contracts\Hero Contracts\IInventory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesOfFate.Contracts.IMage" Collapsed="true">
+    <Position X="43" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Character Contracts\Hero Contracts\IMage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesOfFate.Contracts.IWarrior" Collapsed="true">
+    <Position X="48.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Character Contracts\Hero Contracts\IWarrior.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesOfFate.Contracts.ICharacter" Collapsed="true">
+    <Position X="44.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAEAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Character Contracts\ICharacter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesOfFate.Contracts.IMerchant" Collapsed="true">
+    <Position X="44.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Character Contracts\IMerchant.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesOfFate.Contracts.IMonster" Collapsed="true">
+    <Position X="46.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEEAIABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Character Contracts\Monster Contracts\IMonster.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesOfFate.Contracts.IChest" Collapsed="true">
+    <Position X="46.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Item Contracts\IChest.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesOfFate.Contracts.IGoldChest" Collapsed="true">
+    <Position X="48.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Contracts\Item Contracts\IGoldChest.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesOfFate.Contracts.IItem" Collapsed="true">
+    <Position X="46.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAEAAAAAAAAAAABAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Item Contracts\IItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesOfFate.Contracts.IItemChest" Collapsed="true">
+    <Position X="48.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Item Contracts\IItemChest.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="HeroesOfFate.Models.Characters.Heroes.Race" Collapsed="true">
+    <Position X="44.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAABAAAAAAAAAAAgAAAIAAQAAAA=</HashCode>
+      <FileName>Models\Characters\Heroes\Race.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="HeroesOfFate.Models.Items.ItemType" Collapsed="true">
+    <Position X="43" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAQAAAAEAAAABAAAAAQAAAAAAQAAAAAAAAAI=</HashCode>
+      <FileName>Models\Items\ItemType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="HeroesOfFate.Events.HeroLevelChangeEventHandler" Collapsed="true">
+    <Position X="43" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Events\HeroLevelChangeEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,26 @@
+C:\Users\AboveAll\Documents\Visual Studio 2013\Projects\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe.config
+E:\Work\C#\Bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe.config
+C:\Users\AboveAll\Desktop\Bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe.config
+C:\Users\Dochko\Documents\GitHub\Bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe.config
+C:\Users\Dochko\Documents\GitHub\Bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.csprojResolveAssemblyReference.cache
+C:\Users\Dochko\Documents\GitHub\Bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe
+C:\Users\Dochko\Documents\GitHub\Bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.pdb
+C:\Users\Dochko\Documents\GitHub\Bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.exe
+C:\Users\Dochko\Documents\GitHub\Bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.pdb
+C:\Users\AboveAll\Desktop\Bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe
+C:\Users\AboveAll\Desktop\Bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.pdb
+C:\Users\AboveAll\Desktop\Bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.csprojResolveAssemblyReference.cache
+C:\Users\AboveAll\Desktop\Bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.exe
+C:\Users\AboveAll\Desktop\Bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.pdb
+C:\Users\Yani\Documents\Visual Studio 2013\Projects\bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe.config
+C:\Users\Yani\Documents\Visual Studio 2013\Projects\bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.exe
+C:\Users\Yani\Documents\Visual Studio 2013\Projects\bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.pdb
+C:\Users\Yani\Documents\Visual Studio 2013\Projects\bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe
+C:\Users\Yani\Documents\Visual Studio 2013\Projects\bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.pdb
+C:\Users\Yani\Documents\Visual Studio 2013\Projects\bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.csprojResolveAssemblyReference.cache
+E:\Work\C#\GitRepositories\Bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe.config
+E:\Work\C#\GitRepositories\Bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.exe
+E:\Work\C#\GitRepositories\Bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.pdb
+E:\Work\C#\GitRepositories\Bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe
+E:\Work\C#\GitRepositories\Bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.pdb
+E:\Work\C#\GitRepositories\Bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.csprojResolveAssemblyReference.cache

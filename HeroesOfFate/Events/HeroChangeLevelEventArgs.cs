@@ -8,8 +8,8 @@
             this.LevelsGained = levelsGained;
         }
 
-
         public int Level { get; set; }
+
         public int LevelsGained { get; set; }
     }
 }

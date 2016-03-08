@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using HeroesOfFate.Events;
-using HeroesOfFate.Models.Characters.Heroes;
-using HeroesOfFate.Models.Items.Potions;
-
-namespace HeroesOfFate.Contracts
+﻿namespace HeroesOfFate.Contracts
 {
+    using System.Collections.Generic;
+
+    using HeroesOfFate.Models.Characters.Heroes;
+
     public interface IHero : ICharacter
     {
         string Name { get; set; }
@@ -24,6 +23,5 @@ namespace HeroesOfFate.Contracts
         double MaxHealth { get; set; }
 
         void StandartItems();
-
     }
 }

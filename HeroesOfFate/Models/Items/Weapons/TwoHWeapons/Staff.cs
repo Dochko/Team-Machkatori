@@ -2,7 +2,7 @@
 {
     public class Staff : Weapon
     {
-        public Staff(string id, double weaponAttack, decimal price) 
+        public Staff(string id, double weaponAttack, decimal price)
             : base(id, weaponAttack, price)
         {
             this.IsOneH = false;

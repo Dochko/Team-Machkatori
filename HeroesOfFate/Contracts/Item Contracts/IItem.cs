@@ -1,14 +1,14 @@
-﻿using HeroesOfFate.Models.Items;
-
-namespace HeroesOfFate.Contracts
+﻿namespace HeroesOfFate.Contracts
 {
+    using HeroesOfFate.Models.Items;
+
     public interface IItem
     {
         ItemType Type { get; set; }
 
-        double WeaponAttack{ get; set; }
+        double WeaponAttack { get; set; }
 
-        double ArmorDefence{ get; set; }
+        double ArmorDefence { get; set; }
 
         double HealthEffect { get; set; }
 

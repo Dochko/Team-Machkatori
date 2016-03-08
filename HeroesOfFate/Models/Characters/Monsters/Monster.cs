@@ -1,26 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using HeroesOfFate.Contracts;
-using HeroesOfFate.GameEngine;
-
-namespace HeroesOfFate.Models.Characters.Monsters
+﻿namespace HeroesOfFate.Models.Characters.Monsters
 {
+    using System;
+    using System.Collections.Generic;
+
+    using HeroesOfFate.Contracts;
+    using HeroesOfFate.GameEngine;
+
     public abstract class Monster : Character, IMonster
     {
         private const short MonsterLevelDefault = 1;
+
         private const double GoldRewardDefault = 50;
+
         private const int ExpirienceRewardDefault = 2;
 
         private readonly List<IItem> lootTable;
-        private double goldReward;
+
         private int expirienceReward;
 
-        protected Monster(
-            double damageMin,
-            double damageMax,
-            double health
-            )
-            :base(MonsterLevelDefault, damageMin, damageMax, health)
+        private double goldReward;
+
+        protected Monster(double damageMin, double damageMax, double health)
+            : base(MonsterLevelDefault, damageMin, damageMax, health)
         {
             this.lootTable = new List<IItem>();
             this.GoldReward = GoldRewardDefault;
@@ -29,32 +30,47 @@ namespace HeroesOfFate.Models.Characters.Monsters
 
         public IEnumerable<IItem> LootTable
         {
-            get { return this.lootTable; }
+            get
+            {
+                return this.lootTable;
+            }
         }
 
         public double GoldReward
         {
-            get { return this.goldReward; }
-            set 
+            get
+            {
+                return this.goldReward;
+            }
+
+            set
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException(string.Format(ExceptionConstants.NullOrNegativeException, "Gold reward"));
+                    throw new ArgumentException(
+                        string.Format(ExceptionConstants.NullOrNegativeException, "Gold reward"));
                 }
-                this.goldReward = value; 
+
+                this.goldReward = value;
             }
         }
 
         public int ExpirienceReward
         {
-            get { return this.expirienceReward; }
-            set 
+            get
+            {
+                return this.expirienceReward;
+            }
+
+            set
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException(string.Format(ExceptionConstants.NullOrNegativeException, "Expirience reward"));
+                    throw new ArgumentException(
+                        string.Format(ExceptionConstants.NullOrNegativeException, "Expirience reward"));
                 }
-                this.expirienceReward = value; 
+
+                this.expirienceReward = value;
             }
         }
 
@@ -75,11 +91,10 @@ namespace HeroesOfFate.Models.Characters.Monsters
             }
         }
 
-        //Test !!!
+        // Test !!!
         public override string ToString()
         {
             return string.Format(this.GetType().Name);
         }
-        //Test !!!
     }
 }

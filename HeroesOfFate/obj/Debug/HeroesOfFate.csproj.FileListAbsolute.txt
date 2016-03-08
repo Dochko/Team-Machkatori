@@ -24,3 +24,9 @@ E:\Work\C#\GitRepositories\Bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFat
 E:\Work\C#\GitRepositories\Bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe
 E:\Work\C#\GitRepositories\Bekke\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.pdb
 E:\Work\C#\GitRepositories\Bekke\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.csprojResolveAssemblyReference.cache
+C:\Users\Dochko\Documents\GitHub\Machkatori\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe.config
+C:\Users\Dochko\Documents\GitHub\Machkatori\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.exe
+C:\Users\Dochko\Documents\GitHub\Machkatori\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.pdb
+C:\Users\Dochko\Documents\GitHub\Machkatori\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe
+C:\Users\Dochko\Documents\GitHub\Machkatori\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.pdb
+C:\Users\Dochko\Documents\GitHub\Machkatori\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.csprojResolveAssemblyReference.cache

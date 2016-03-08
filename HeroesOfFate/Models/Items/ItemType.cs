@@ -2,13 +2,20 @@
 {
     public enum ItemType
     {
-        Helmet,
-        MainHand,
-        OffHand,
-        Body,
-        Legs,
-        Gloves,
-        Boots,
+        Helmet, 
+
+        MainHand, 
+
+        OffHand, 
+
+        Body, 
+
+        Legs, 
+
+        Gloves, 
+
+        Boots, 
+
         Potion
     }
 }

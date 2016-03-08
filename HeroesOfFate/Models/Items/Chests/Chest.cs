@@ -1,9 +1,10 @@
-﻿using System;
-using HeroesOfFate.Contracts;
-using HeroesOfFate.GameEngine;
-
-namespace HeroesOfFate.Models.Items.Chests
+﻿namespace HeroesOfFate.Models.Items.Chests
 {
+    using System;
+
+    using HeroesOfFate.Contracts;
+    using HeroesOfFate.GameEngine;
+
     public abstract class Chest : IChest
     {
         private string id;
@@ -15,14 +16,19 @@ namespace HeroesOfFate.Models.Items.Chests
 
         public string Id
         {
-            get { return this.id; }
-            set 
+            get
+            {
+                return this.id;
+            }
+
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentException(string.Format(ExceptionConstants.NullOrEmptyException, "Chest ID"));
                 }
-                this.id = value; 
+
+                this.id = value;
             }
         }
     }

@@ -2,10 +2,14 @@
 {
     public enum Race
     {
-        Human,
-		Elf,
-		Orc,
-		Dwarf,
-		Werewolf
+        Human, 
+
+        Elf, 
+
+        Orc, 
+
+        Dwarf, 
+
+        Werewolf
     }
 }

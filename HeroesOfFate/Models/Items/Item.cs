@@ -1,97 +1,128 @@
-﻿using System;
-using HeroesOfFate.Contracts;
-using HeroesOfFate.GameEngine;
-
-namespace HeroesOfFate.Models.Items
+﻿namespace HeroesOfFate.Models.Items
 {
+    using System;
+
+    using HeroesOfFate.Contracts;
+    using HeroesOfFate.GameEngine;
+
     public abstract class Item : IItem
     {
-        private ItemType type;
-        private string id;
-        private decimal price;
-        private double weaponAttack;
         private double armorDefence;
+
         private double healthEffect;
 
-        protected Item(string id,decimal price)
+        private string id;
+
+        private decimal price;
+
+        private double weaponAttack;
+
+        protected Item(string id, decimal price)
         {
-            this.Type = type;
+            this.Type = this.Type;
             this.Id = id;
             this.Price = price;
-            this.WeaponAttack = weaponAttack;
-            this.ArmorDefence = armorDefence;
-            this.HealthEffect = healthEffect;
+            this.WeaponAttack = this.weaponAttack;
+            this.ArmorDefence = this.armorDefence;
+            this.HealthEffect = this.healthEffect;
         }
 
-        public ItemType Type 
-        {
-            get { return this.type; }
-            set { this.type = value; } 
-        }
+        public ItemType Type { get; set; }
 
         public string Id
         {
-            get { return id; }
+            get
+            {
+                return this.id;
+            }
+
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentNullException(string.Format(ExceptionConstants.NullOrNegativeException, "Item id"));
+                    throw new ArgumentNullException(
+                        string.Format(ExceptionConstants.NullOrNegativeException, "Item id"));
                 }
-                id = value;
+
+                this.id = value;
             }
         }
 
         public decimal Price
         {
-            get { return price; }
+            get
+            {
+                return this.price;
+            }
+
             set
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException(string.Format(ExceptionConstants.NullOrNegativeException, "Item price"));
+                    throw new ArgumentOutOfRangeException(
+                        string.Format(ExceptionConstants.NullOrNegativeException, "Item price"));
                 }
-                price = value;
+
+                this.price = value;
             }
         }
 
         public virtual bool IsOneH { get; set; }
-        //TODO: validation
-        public double WeaponAttack 
-        { 
-            get {return this.weaponAttack;}
+
+        // TODO: validation
+        public double WeaponAttack
+        {
+            get
+            {
+                return this.weaponAttack;
+            }
+
             set
             {
                 if (value < 0)
-	            {
-		            throw new ArgumentOutOfRangeException(string.Format(ExceptionConstants.LessThanException, "Weapon attack", 0));
-	            }
+                {
+                    throw new ArgumentOutOfRangeException(
+                        string.Format(ExceptionConstants.LessThanException, "Weapon attack", 0));
+                }
+
                 this.weaponAttack = value;
             }
         }
 
-        public double ArmorDefence 
-        { 
-            get {return this.armorDefence;}
+        public double ArmorDefence
+        {
+            get
+            {
+                return this.armorDefence;
+            }
+
             set
             {
                 if (value < 0)
-	            {
-		            throw new ArgumentOutOfRangeException(string.Format(ExceptionConstants.LessThanException, "Armor defence", 0));
-	            }
+                {
+                    throw new ArgumentOutOfRangeException(
+                        string.Format(ExceptionConstants.LessThanException, "Armor defence", 0));
+                }
+
                 this.armorDefence = value;
             }
         }
 
-        public double HealthEffect 
-        { 
-            get {return this.healthEffect;}
+        public double HealthEffect
+        {
+            get
+            {
+                return this.healthEffect;
+            }
+
             set
             {
                 if (value < 0)
-	            {
-		            throw new ArgumentOutOfRangeException(string.Format(ExceptionConstants.LessThanException, "Health effect", 0));
-	            }
+                {
+                    throw new ArgumentOutOfRangeException(
+                        string.Format(ExceptionConstants.LessThanException, "Health effect", 0));
+                }
+
                 this.healthEffect = value;
             }
         }

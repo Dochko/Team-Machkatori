@@ -1,11 +1,10 @@
-﻿using HeroesOfFate.Contracts.Item_Contracts;
-
-namespace HeroesOfFate.Models.Items.Weapons
+﻿namespace HeroesOfFate.Models.Items.Weapons
 {
-    public class Weapon : Item,IWeapon
-    {
+    using HeroesOfFate.Contracts.Item_Contracts;
 
-        public Weapon(string id, double weaponAttack, decimal price) 
+    public class Weapon : Item, IWeapon
+    {
+        public Weapon(string id, double weaponAttack, decimal price)
             : base(id, price)
         {
             this.Type = ItemType.MainHand;
@@ -16,7 +15,7 @@ namespace HeroesOfFate.Models.Items.Weapons
 
         public override string ToString()
         {
-            return string.Format("{0}, Damage: {1}, Price: {2}", base.ToString(), WeaponAttack, Price);
+            return string.Format("{0}, Damage: {1}, Price: {2}", base.ToString(), this.WeaponAttack, this.Price);
         }
     }
 }

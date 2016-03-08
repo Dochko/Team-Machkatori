@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace HeroesOfFate.Contracts
+﻿namespace HeroesOfFate.Contracts
 {
+    using System.Collections.Generic;
+
     public interface IMonster : ICharacter
     {
         double GoldReward { get; set; }
+
         int ExpirienceReward { get; set; }
 
         IEnumerable<IItem> LootTable { get; }

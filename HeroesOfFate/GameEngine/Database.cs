@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
-using HeroesOfFate.Contracts;
-
-namespace HeroesOfFate.GameEngine
+﻿namespace HeroesOfFate.GameEngine
 {
+    using System.Collections.Generic;
+
+    using HeroesOfFate.Contracts;
+
     public class Database
     {
-        private ICollection<IMonster> monsters;
-        private ICollection<IItem> items;
-        private ICollection<IItem> itemChests; 
+        private readonly ICollection<IItem> itemChests;
+
+        private readonly ICollection<IItem> items;
+
+        private readonly ICollection<IMonster> monsters;
 
         public Database()
         {
@@ -23,18 +21,27 @@ namespace HeroesOfFate.GameEngine
 
         public IEnumerable<IMonster> Monsters
         {
-            get { return this.monsters; }
+            get
+            {
+                return this.monsters;
+            }
         }
 
         public IEnumerable<IItem> Items
         {
-            get { return this.items; }
+            get
+            {
+                return this.items;
+            }
         }
 
         public IEnumerable<IItem> ItemChests
         {
-            get { return itemChests; }
-        } 
+            get
+            {
+                return this.itemChests;
+            }
+        }
 
         public void AddMonster(params IMonster[] monsters)
         {
@@ -64,6 +71,7 @@ namespace HeroesOfFate.GameEngine
                 {
                     return item;
                 }
+
                 count++;
             }
 

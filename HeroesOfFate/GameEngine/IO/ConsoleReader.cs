@@ -1,8 +1,7 @@
-﻿using System;
-using System.Reflection.Emit;
-
-namespace HeroesOfFate.GameEngine.IO
+﻿namespace HeroesOfFate.GameEngine.IO
 {
+    using System;
+
     public class ConsoleReader
     {
         public string ReadCommand()

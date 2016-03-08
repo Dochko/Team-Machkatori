@@ -9,6 +9,7 @@
     using HeroesOfFate.Contracts.FactoryContracts;
     using HeroesOfFate.Factories;
     using HeroesOfFate.GameEngine.IO;
+    using HeroesOfFate.Models.Characters;
     using HeroesOfFate.Models.Characters.Heroes;
     using HeroesOfFate.Models.Characters.Monsters;
     using HeroesOfFate.Models.Items.Chests;
@@ -32,10 +33,13 @@
         public Core()
         {
             this.Hero = this.Hero;
+            this.Merchant = new Merchant();
             this.Database = this.database;
         }
 
         public Hero Hero { get; set; }
+
+        public Merchant Merchant { get; set; }
 
         public Database Database { get; set; }
 
@@ -53,8 +57,77 @@
                 };
         }
 
+        // Populating items in the game and inserting them to the monsters and item chests
+        public void ImplementItems()
+        {
+            using (StreamReader file = new StreamReader("..\\..\\resources\\items.txt"))
+            {
+                string line;
+                while ((line = file.ReadLine()) != null)
+                {
+                    string[] inputArgs = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    this.ParseTextfileToDatabase(inputArgs);
+                }
+
+                foreach (var monster in this.database.Monsters)
+                {
+                    foreach (var item in this.database.Items)
+                    {
+                        monster.AddItemToLootTable(item);
+                    }
+                }
+
+                foreach (IItemChest chest in this.database.ItemChests)
+                {
+                    foreach (var item in this.database.Items)
+                    {
+                        chest.AddItemToChest(item);
+                    }
+                }
+            }
+
+            using (StreamReader file = new StreamReader("..\\..\\resources\\merchantItems.txt"))
+            {
+                string line;
+                while ((line = file.ReadLine()) != null)
+                {
+                    string[] inputArgs = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    this.ParseTextfileToMerchant(inputArgs);
+                }
+            }
+        }
+
+        public void MonsterFactory()
+        {
+            this.database.AddMonster(new Goblin(), new Ogre(), new Troll(), new Undead(), new Wolf());
+        }
+
+        // The method for getting random loot from monsters and item chests
+        public IItem LootRandomItem()
+        {
+            Random random = new Random();
+
+            int result = random.Next(0 - (this.database.Items.Count() / 2), this.database.Items.Count());
+
+            if (result < 0)
+            {
+                throw new ArgumentException(ExceptionConstants.NothingLootedException);
+            }
+
+            this.Hero.AddItemToInventory(this.database.GetitemByIndex(result));
+
+            return this.database.GetitemByIndex(result);
+        }
+
+        public string LootGoldChest()
+        {
+            this.Hero.Gold += this.goldChest.Gold;
+            this.Hero.Exp += this.goldChest.Exp;
+            return string.Format(this.goldChest.Gold + " " + this.goldChest.Exp);
+        }
+
         // Commands info screen leading back to the start screen
-        public void CommandsInfo()
+        private void CommandsInfo()
         {
             Console.Clear();
             StringBuilder output = new StringBuilder();
@@ -96,65 +169,6 @@
                     this.writer.PrintCommand(e.Message);
                 }
             }
-        }
-
-        // Populating items in the game and inserting them to the monsters and item chests
-        public void ImplementItems()
-        {
-            using (StreamReader file = new StreamReader("..\\..\\resources\\items.txt"))
-            {
-                string line;
-                while ((line = file.ReadLine()) != null)
-                {
-                    string[] inputArgs = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    this.ParseInputData(inputArgs);
-                }
-
-                foreach (var monster in this.database.Monsters)
-                {
-                    foreach (var item in this.database.Items)
-                    {
-                        monster.AddItemToLootTable(item);
-                    }
-                }
-
-                foreach (IItemChest chest in this.database.ItemChests)
-                {
-                    foreach (var item in this.database.Items)
-                    {
-                        chest.AddItemToChest(item);
-                    }
-                }
-            }
-        }
-
-        public void MonsterFactory()
-        {
-            this.database.AddMonster(new Goblin(), new Ogre(), new Troll(), new Undead(), new Wolf());
-        }
-
-        // The method for getting random loot from monsters and item chests
-        public IItem LootRandomItem()
-        {
-            Random random = new Random();
-
-            int result = random.Next(0 - (this.database.Items.Count() / 2), this.database.Items.Count());
-
-            if (result < 0)
-            {
-                throw new ArgumentException(ExceptionConstants.NothingLootedException);
-            }
-
-            this.Hero.AddItemToInventory(this.database.GetitemByIndex(result));
-
-            return this.database.GetitemByIndex(result);
-        }
-
-        public string LootGoldChest()
-        {
-            this.Hero.Gold += this.goldChest.Gold;
-            this.Hero.Exp += this.goldChest.Exp;
-            return string.Format(this.goldChest.Gold + " " + this.goldChest.Exp);
         }
 
         private void StartScreen()
@@ -309,9 +323,11 @@
 
                             check = false;
                             break;
+                        
                         case "exit":
                             Environment.Exit(0);
                             break;
+                        
                         default:
                             throw new ArgumentException(
                                 string.Format(ExceptionConstants.CharCreationException, "Class"));
@@ -326,8 +342,8 @@
             }
         }
 
-        // Loading the items from prewritten text file
-        private void ParseInputData(string[] inputArgs)
+        // Loading the items from prewritten text file to the Database
+        private void ParseTextfileToDatabase(string[] inputArgs)
         {
             string itemType = inputArgs[0];
             string itemName = inputArgs[1];
@@ -352,6 +368,43 @@
                         decimal armorPrice = decimal.Parse(inputArgs[4]);
                         IItem armor = this.armorFactory.CreateArmor(itemName, itemId, armorDeffence, armorPrice);
                         this.database.AddItem(armor);
+                        break;
+                    default:
+                        throw new ArgumentException(string.Format(ExceptionConstants.InvalidItemException, "Potion"));
+                }
+            }
+            catch (ArgumentException e)
+            {
+                this.writer.PrintCommand(e.Message);
+            }
+        }
+
+        // Loading the items from prewritten text file to the Merchant Store
+        private void ParseTextfileToMerchant(string[] inputArgs)
+        {
+            string itemType = inputArgs[0];
+            string itemName = inputArgs[1];
+            string itemId = inputArgs[2];
+            try
+            {
+                switch (itemType)
+                {
+                    case "potion":
+                        decimal price = decimal.Parse(inputArgs[3]);
+                        IItem potion = this.potionFactory.CreatePotion(itemName, itemId, price);
+                        this.Merchant.AddItemToMerchant(potion);
+                        break;
+                    case "weapon":
+                        double weaponAttack = double.Parse(inputArgs[3]);
+                        decimal weaponPrice = decimal.Parse(inputArgs[4]);
+                        IItem weapon = this.weaponFactory.CreateWeapon(itemName, itemId, weaponAttack, weaponPrice);
+                        this.Merchant.AddItemToMerchant(weapon);
+                        break;
+                    case "armor":
+                        double armorDeffence = double.Parse(inputArgs[3]);
+                        decimal armorPrice = decimal.Parse(inputArgs[4]);
+                        IItem armor = this.armorFactory.CreateArmor(itemName, itemId, armorDeffence, armorPrice);
+                        this.Merchant.AddItemToMerchant(armor);
                         break;
                     default:
                         throw new ArgumentException(string.Format(ExceptionConstants.InvalidItemException, "Potion"));

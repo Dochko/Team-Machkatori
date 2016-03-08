@@ -153,7 +153,7 @@
                                     rnd.Next((int)this.core.Hero.DamageMin, (int)this.core.Hero.DamageMax + 1) * 4);
                                 DrawScreen.AddLineToBuffer(
                                     ref this.battleArea2, 
-                                    "You used special hit wich did " + dmg + " amount of damage!");
+                                    "You used special hit witch did " + dmg + " amount of damage!");
                                 if (monster.Health > 0)
                                 {
                                     check = this.MonsterDoDamage(rnd, monster, check);

@@ -7,9 +7,9 @@
 
     public class GoldChest : Chest, IGoldChest
     {
-        private int exp;
-
         private double gold;
+
+        private int exp;
 
         public GoldChest(string id, double gold, int exp)
             : base(id)

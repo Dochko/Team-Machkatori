@@ -109,7 +109,7 @@ namespace HeroesOfFate.GameEngine
                             Core.Hero.Equip(Core.Hero.Inventory.ElementAt(int.Parse(inputArgs[1]) - 1));
                             break;
                         case "help":
-                            DrawInventory(HelpArea(), inputArgs[0]);
+                            DrawInventory(HelpInventoryArea(), inputArgs[0]);
                             Console.Write("Press any key to continue...");
                             Console.ReadKey();
                             break;
@@ -129,7 +129,7 @@ namespace HeroesOfFate.GameEngine
             }
         }
 
-        private static List<string> HelpArea()
+        private static List<string> HelpInventoryArea()
         {
             List<string> helpArea = new List<string>();
             DrawScreen.AddLineToBuffer(ref helpArea, "Usable commands for inventory menu:");
@@ -166,7 +166,7 @@ namespace HeroesOfFate.GameEngine
                 }
 
                 DrawScreen.AddLineToBuffer(ref inventoryArea, new string('-', 90));
-                DrawScreen.AddLineToBuffer(ref inventoryArea, "Your equiped items:");
+                DrawScreen.AddLineToBuffer(ref inventoryArea, "Your equipped items:");
                 foreach (var equip in Core.Hero.Equipment)
                 {
                     DrawScreen.AddLineToBuffer(ref equipArea, equip.ToString());
@@ -181,6 +181,8 @@ namespace HeroesOfFate.GameEngine
                 DrawScreen.Draw(newArea, DrawScreen.Area2);
             }
         }
+
+
 
         // move method
         private static void Move(string command, string[] splitCommand)

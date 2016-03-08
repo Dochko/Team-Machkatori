@@ -12,7 +12,7 @@
 
         public override string ToString()
         {
-            return string.Format("{0}, Defence: {1}, Price: {2}", base.ToString(), this.ArmorDefence, this.Price);
+            return string.Format("{0}, Defense: {1}, Price: {2}", base.ToString(), this.ArmorDefence, this.Price);
         }
     }
 }

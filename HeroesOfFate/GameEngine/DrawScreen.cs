@@ -5,7 +5,7 @@
     using System.Diagnostics.CodeAnalysis;
     using System.IO;
 
-    internal static class DrawScreen
+    public static class DrawScreen
     {
         [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1401:FieldsMustBePrivate", Justification = "Reviewed. Suppression is OK here.")]
         public static List<string> Area1 = new List<string>();

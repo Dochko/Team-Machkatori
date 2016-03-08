@@ -73,12 +73,14 @@
     <Compile Include="GameEngine\ExceptionConstants.cs" />
     <Compile Include="GameEngine\IO\ConsoleReader.cs" />
     <Compile Include="GameEngine\IO\ConsoleWriter.cs" />
+    <Compile Include="GameEngine\Shopping\ShoppingScreen.cs" />
     <Compile Include="MainProgram.cs" />
     <Compile Include="Models\Characters\Character.cs" />
     <Compile Include="Models\Characters\Heroes\Archer.cs" />
     <Compile Include="Models\Characters\Heroes\Mage.cs" />
     <Compile Include="Models\Characters\Heroes\Warrior.cs" />
     <Compile Include="Models\Characters\Heroes\Hero.cs" />
+    <Compile Include="Models\Characters\Merchant.cs" />
     <Compile Include="Models\Items\Chests\Chest.cs" />
     <Compile Include="Models\Items\Chests\GoldChest.cs" />
     <Compile Include="Models\Items\Item.cs" />
@@ -121,6 +123,7 @@
   <ItemGroup>
     <Content Include="resources\items.txt" />
     <Content Include="resources\map.txt" />
+    <Content Include="resources\merchantItems.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

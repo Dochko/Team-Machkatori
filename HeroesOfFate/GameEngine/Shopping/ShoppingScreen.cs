@@ -35,19 +35,26 @@
         private void FillArea(Hero hero, IMerchant merchant)
         {
             DrawScreen.AddLineToBuffer(ref this.merchantItemsArea, "Merchants Items:");
-            int i = 1;
+            int merchantItemsCounter = 1;
             foreach (var item in this.core.Merchant.MerchantItems)
             {
-                DrawScreen.AddLineToBuffer(ref this.merchantItemsArea, i + ". " + item);
-                i++;
+                DrawScreen.AddLineToBuffer(ref this.merchantItemsArea, merchantItemsCounter + ". " + item);
+                merchantItemsCounter++;
             }
 
-            for (int j = i; j < 8; j++)
+            for (int j = merchantItemsCounter; j < 16; j++)
             {
                 DrawScreen.AddLineToBuffer(ref this.merchantItemsArea, Environment.NewLine);
             }
+            DrawScreen.AddLineToBuffer(ref this.merchantItemsArea, new string('-', 90));
 
-
+            int heroItemsCounter = 1;
+            DrawScreen.AddLineToBuffer(ref this.merchantItemsArea, "Your inventory items:");
+            foreach (var item in this.core.Hero.Inventory)
+            {
+                DrawScreen.AddLineToBuffer(ref this.heroInventoryItemsArea, heroItemsCounter + ". " + item);
+                heroItemsCounter++;
+            }
         }
     }
 }

@@ -459,5 +459,56 @@ namespace HeroesOfFate.GameEngine
                 throw new ArgumentException(ExceptionConstants.WrongDirectionException);
             }
         }
+        //public string ToXmlString()
+        //{
+        //    XmlDocument playerData = new XmlDocument();
+
+        //    // Create the top-level XML node
+        //    XmlNode player = playerData.CreateElement("Player");
+        //    playerData.AppendChild(player);
+
+        //    // Create the "Stats" child node to hold the other player statistics nodes
+        //    XmlNode stats = playerData.CreateElement("Stats");
+        //    player.AppendChild(stats);
+
+        //    // Create the child nodes for the "Stats" node
+
+        //    XmlNode maximumHitPoints = playerData.CreateElement("MaximumHitPoints");
+        //    maximumHitPoints.AppendChild(playerData.CreateTextNode(Core.Hero.MaxHealth.ToString()));
+        //    stats.AppendChild(maximumHitPoints);
+
+        //    XmlNode gold = playerData.CreateElement("Gold");
+        //    gold.AppendChild(playerData.CreateTextNode(Core.Hero.Gold.ToString()));
+        //    stats.AppendChild(gold);
+
+        //    XmlNode experiencePoints = playerData.CreateElement("ExperiencePoints");
+        //    experiencePoints.AppendChild(playerData.CreateTextNode(Core.Hero.Exp.ToString()));
+        //    stats.AppendChild(experiencePoints);
+
+        //    XmlNode currentLocation = playerData.CreateElement("CurrentLocation");
+        //    currentLocation.AppendChild(playerData.CreateTextNode(HeroPosition.ToString()));
+        //    stats.AppendChild(currentLocation);
+
+        //    // Create the "InventoryItems" child node to hold each InventoryItem node
+        //    XmlNode inventoryItems = playerData.CreateElement("InventoryItems");
+        //    player.AppendChild(inventoryItems);
+
+        //    //// Create an "InventoryItem" node for each item in the player's inventory
+        //    //foreach (var item in Core.Hero.Inventory)
+        //    //{
+        //    //    XmlNode inventoryItem = playerData.CreateElement("InventoryItem");
+
+        //    //    XmlAttribute idAttribute = playerData.CreateAttribute("ID");
+        //    //    idAttribute.Value = item.ToString();
+        //    //    inventoryItem.Attributes.Append(idAttribute);
+
+        //    //    XmlAttribute quantityAttribute = playerData.CreateAttribute("Quantity");
+        //    //    quantityAttribute.Value = item.ToString();
+        //    //    inventoryItem.Attributes.Append(quantityAttribute);
+
+        //    //    inventoryItems.AppendChild(inventoryItem);
+        //    //}
+        //    return playerData.InnerXml; // The XML document, as a string, so we can save the data to disk
+        //}
     }
 }

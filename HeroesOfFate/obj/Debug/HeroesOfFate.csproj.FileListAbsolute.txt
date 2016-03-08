@@ -30,3 +30,4 @@ C:\Users\Dochko\Documents\GitHub\Machkatori\HeroesOfFate\HeroesOfFate\obj\Debug\
 C:\Users\Dochko\Documents\GitHub\Machkatori\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.exe
 C:\Users\Dochko\Documents\GitHub\Machkatori\HeroesOfFate\HeroesOfFate\bin\Debug\HeroesOfFate.pdb
 C:\Users\Dochko\Documents\GitHub\Machkatori\HeroesOfFate\HeroesOfFate\obj\Debug\HeroesOfFate.csprojResolveAssemblyReference.cache
+C:\Users\TodorYordanov\Documents\Team-Machkatori\HeroesOfFate\bin\Debug\HeroesOfFate.exe.config

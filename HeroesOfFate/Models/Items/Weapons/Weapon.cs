@@ -2,9 +2,9 @@
 {
     using HeroesOfFate.Contracts.Item_Contracts;
 
-    public class Weapon : Item, IWeapon
+    public abstract class Weapon : Item, IWeapon
     {
-        public Weapon(string id, double weaponAttack, decimal price)
+        protected Weapon(string id, double weaponAttack, decimal price)
             : base(id, price)
         {
             this.Type = ItemType.MainHand;

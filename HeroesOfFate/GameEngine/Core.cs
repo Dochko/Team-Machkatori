@@ -33,15 +33,15 @@
         public Core()
         {
             this.Hero = this.Hero;
-            this.Merchant = new Merchant();
+            this.Merchant = this.Merchant;
             this.Database = this.database;
         }
 
-        public Hero Hero { get; set; }
+        public Hero Hero { get; private set; }
 
-        public Merchant Merchant { get; set; }
+        public Merchant Merchant { get; private set; }
 
-        public Database Database { get; set; }
+        public Database Database { get; private set; }
 
         // Method for starting the game
         public void Run()
@@ -213,7 +213,7 @@
             chooseOption.AppendLine("To create your hero write it in the following format:");
             chooseOption.AppendLine("(hero profession) (hero name) (hero race)" + Environment.NewLine);
             chooseOption.AppendLine("Choose your hero's profession:");
-            chooseOption.AppendLine("The avalable professions are: Warrior, Archer and Mage" + Environment.NewLine);
+            chooseOption.AppendLine("The available professions are: Warrior, Archer and Mage" + Environment.NewLine);
             chooseOption.AppendLine("The Warrior has:                 The Archer has:                 The Mage has:");
             chooseOption.AppendLine(
                 "Basic attack: 25 - 75            Basic attack: 75 - 100          Basic attack: 100 - 125");
@@ -222,7 +222,7 @@
                 "Armor: 125                       Armor: 100                      Armor: 75" + Environment.NewLine);
 
             chooseOption.AppendLine("What is your hero's name and race ?");
-            chooseOption.AppendLine("The avalable races are: Human, Elf, Orc, Dwarf or Werewolf");
+            chooseOption.AppendLine("The available races are: Human, Elf, Orc, Dwarf or Werewolf");
             this.writer.PrintCommand(chooseOption.ToString());
 
             bool check = true;
@@ -333,6 +333,7 @@
                                 string.Format(ExceptionConstants.CharCreationException, "Class"));
                     }
 
+                    this.Merchant = new Merchant();
                     this.ImplementItems();
                 }
                 catch (ArgumentException e)

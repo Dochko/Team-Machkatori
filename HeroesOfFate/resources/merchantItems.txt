@@ -1,16 +1,17 @@
 ﻿potion healthPotion Megakruv 50
-armor body RussetArmor 50 500
-armor boots Galoshi 10 50
-armor gloves SnowBall 5 15
-armor helm Sallet 15 65
-armor legs Gashti 10 55
+potion healthPotion Megakruv 50
+armor body Vest 50 500
+armor boots Sandals 8 50
+armor gloves WinterGloves 5 15
+armor helm StrawHat 10 65
+armor legs Jeans 12 55
 armor shield TowerWall 40 300
-weapon axe Machkator 30 250
-weapon handcrossbow MonsterKiller 40 200
-weapon mace HeadSmasher 30 200
-weapon sword Ishivator 50 300
-weapon wand Criter 15 100
-weapon bow Piercer 45 325
-weapon greataxe Axevator 40 300
-weapon greatsword Swordonator 35 275
-weapon staff Apocalypse 55 350
+weapon axe Machkator 75 500
+weapon handcrossbow MonsterKiller 100 200
+weapon mace HeadSmasher 75 200
+weapon sword Ishivator 75 300
+weapon wand Criter 110 100
+weapon bow Piercer 125 325
+weapon greataxe Axevator 100 300
+weapon greatsword Swordonator 100 275
+weapon staff Apocalypse 125 350

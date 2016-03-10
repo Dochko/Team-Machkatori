@@ -298,6 +298,12 @@
 
         protected abstract void StandartItems();
 
+        protected void EquipStandartItems(IItem item)
+        {
+            this.AddItemToInventory(item);
+            this.Equip(item);
+        }
+
         private IItem FindShield()
         {
             foreach (var item in this.equipment)

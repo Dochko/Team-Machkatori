@@ -15,10 +15,28 @@
 
         private const int AreaHeights = (40 - 2) / 2;
 
-        public static List<string> AddMap()
+        public static List<string> AddMap(int[] heroPostion)
         {
             List<string> map = new List<string>();
-            using (StreamReader file = new StreamReader("..\\..\\resources\\map.txt"))
+            Random random = new Random();
+            int result = random.Next(1, 3);
+            StreamReader file = StreamReader.Null;
+            switch (result)
+            {
+                case 1:
+                    file = new StreamReader("..\\..\\resources\\DefaultMap.txt");
+                    heroPostion[0] = 5;
+                    heroPostion[1] = 1;
+                    break;
+
+                case 2:
+                    file = new StreamReader("..\\..\\resources\\SoftUniMap.txt");
+                    heroPostion[0] = 6;
+                    heroPostion[1] = 24;
+                    break;
+            }
+            
+            using (file)
             {
                 string line;
                 while ((line = file.ReadLine()) != null)

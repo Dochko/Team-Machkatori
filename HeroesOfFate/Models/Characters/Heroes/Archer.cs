@@ -1,6 +1,7 @@
 ﻿namespace HeroesOfFate.Models.Characters.Heroes
 {
     using HeroesOfFate.Contracts;
+    using HeroesOfFate.Models.Items.Armors;
     using HeroesOfFate.Models.Items.Weapons.TwoHWeapons;
 
     public class Archer : Hero
@@ -38,9 +39,23 @@
 
         protected override sealed void StandartItems()
         {
-            IItem bow = new Bow("Wooden bow", 20, 15);
-            this.AddItemToInventory(bow);
-            this.Equip(bow);
+            IItem woodenBow = new Bow("Wooden bow", 20, 50);
+            this.EquipStandartItems(woodenBow);
+
+            IItem leatherArmor = new Body("Leather Armor", 30, 50);
+            this.EquipStandartItems(leatherArmor);
+
+            IItem hood = new Helm("Hood", 10, 10);
+            this.EquipStandartItems(hood);
+
+            IItem leatherLeggings = new Legs("Leather Leggings", 15, 20);
+            this.EquipStandartItems(leatherLeggings);
+
+            IItem leatherBoots = new Boots("Leather Boots", 5, 10);
+            this.EquipStandartItems(leatherBoots);
+
+            IItem leatherGloves = new Gloves("Leather Gloves", 5, 10);
+            this.EquipStandartItems(leatherGloves);
         }
     }
 }

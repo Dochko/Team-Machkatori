@@ -5,6 +5,7 @@ namespace HeroesOfFate.GameEngine
     using System.Linq;
 
     using HeroesOfFate.GameEngine.Combat;
+    using HeroesOfFate.GameEngine.IO;
     using HeroesOfFate.GameEngine.Shopping;
     using HeroesOfFate.Models.Characters.Heroes;
 
@@ -24,9 +25,13 @@ namespace HeroesOfFate.GameEngine
 
         private static readonly Core Core = new Core();
 
-        private static readonly List<string> Map = DrawScreen.AddMap(); // adding map to the game
+        private static readonly ConsoleReader Reader = new ConsoleReader();
 
-        private static readonly int[] HeroPosition = { 5, 1 };
+        private static readonly ConsoleWriter Writer = new ConsoleWriter();
+
+        private static readonly int[] HeroPosition = new int[2];
+
+        private static readonly List<string> Map = DrawScreen.AddMap(HeroPosition); // adding map to the game
 
         private static char specSymbol = '═';
 
@@ -46,7 +51,7 @@ namespace HeroesOfFate.GameEngine
 
             while (true)
             {
-                string command = Console.ReadLine();
+                string command = Reader.ReadLine();
                 string[] splitCommand = command.Split(' ');
                 try
                 {
@@ -58,14 +63,14 @@ namespace HeroesOfFate.GameEngine
                         case "inventory":
                             DrawScreen.AddLineToBuffer(ref DrawScreen.Area2, Environment.NewLine);
                             DrawScreen.AddLineToBuffer(
-                                ref DrawScreen.Area2, 
+                                ref DrawScreen.Area2,
                                 "Your inventory.. make your choice.(press help for info)");
                             InventoryWork();
                             break;
                         case "info":
                             DrawScreen.Draw(Info(), DrawScreen.Area2);
-                            Console.Write("Press any key to continue...");
-                            Console.ReadKey();
+                            Writer.Write("Press any key to continue...");
+                            Reader.ReadKey();
                             break;
                         case "exit":
                             Environment.Exit(0);
@@ -73,6 +78,10 @@ namespace HeroesOfFate.GameEngine
                         default:
                             throw new ArgumentException(ExceptionConstants.InvalidCommandException);
                     }
+                }
+                catch (IndexOutOfRangeException e)
+                {
+                    DrawScreen.AddLineToBuffer(ref DrawScreen.Area2, e.Message);
                 }
                 catch (ArgumentException e)
                 {
@@ -113,8 +122,8 @@ namespace HeroesOfFate.GameEngine
                             break;
                         case "help":
                             DrawInventory(HelpInventoryArea(), inputArgs[0]);
-                            Console.Write("Press any key to continue...");
-                            Console.ReadKey();
+                            Writer.Write("Press any key to continue...");
+                            Reader.ReadKey();
                             break;
                         case "back":
                             check = false;
@@ -184,8 +193,6 @@ namespace HeroesOfFate.GameEngine
                 DrawScreen.Draw(newArea, DrawScreen.Area2);
             }
         }
-
-
 
         // move method
         private static void Move(string command, string[] splitCommand)
@@ -363,6 +370,7 @@ namespace HeroesOfFate.GameEngine
                     }
 
                     return 1;
+
                 case MonsterSymbol:
                     DrawScreen.AddLineToBuffer(
                         ref DrawScreen.Area2, 
@@ -379,13 +387,24 @@ namespace HeroesOfFate.GameEngine
                     BattleScreen battle = new BattleScreen(Core, 0);
                     battle.StartBattle();
                     return 2;
+
                 case MerchantSymbol:
                     DrawScreen.AddLineToBuffer(
                         ref DrawScreen.Area2, 
                         string.Format(ExceptionConstants.SomethingHappen, "merchant from the Merchant's Guild", "you check his wares."));
+                    if (command == "up" || command == "down")
+                    {
+                        specSymbol = '║';
+                    }
+                    else
+                    {
+                        specSymbol = '═';
+                    }
+
                     ShoppingScreen shopping = new ShoppingScreen(Core);
                     shopping.StartShopping();
-                    return 0;
+                    return 3;
+
                 case BossSymbol:
                     DrawScreen.AddLineToBuffer(
                         ref DrawScreen.Area2, 
@@ -407,6 +426,7 @@ namespace HeroesOfFate.GameEngine
                     DrawScreen.Draw(Info(), DrawScreen.Area2);
                     Environment.Exit(0);
                     return 4;
+
                 default:
                     return 0;
             }
@@ -469,56 +489,5 @@ namespace HeroesOfFate.GameEngine
                 throw new ArgumentException(ExceptionConstants.WrongDirectionException);
             }
         }
-        //public string ToXmlString()
-        //{
-        //    XmlDocument playerData = new XmlDocument();
-
-        //    // Create the top-level XML node
-        //    XmlNode player = playerData.CreateElement("Player");
-        //    playerData.AppendChild(player);
-
-        //    // Create the "Stats" child node to hold the other player statistics nodes
-        //    XmlNode stats = playerData.CreateElement("Stats");
-        //    player.AppendChild(stats);
-
-        //    // Create the child nodes for the "Stats" node
-
-        //    XmlNode maximumHitPoints = playerData.CreateElement("MaximumHitPoints");
-        //    maximumHitPoints.AppendChild(playerData.CreateTextNode(Core.Hero.MaxHealth.ToString()));
-        //    stats.AppendChild(maximumHitPoints);
-
-        //    XmlNode gold = playerData.CreateElement("Gold");
-        //    gold.AppendChild(playerData.CreateTextNode(Core.Hero.Gold.ToString()));
-        //    stats.AppendChild(gold);
-
-        //    XmlNode experiencePoints = playerData.CreateElement("ExperiencePoints");
-        //    experiencePoints.AppendChild(playerData.CreateTextNode(Core.Hero.Exp.ToString()));
-        //    stats.AppendChild(experiencePoints);
-
-        //    XmlNode currentLocation = playerData.CreateElement("CurrentLocation");
-        //    currentLocation.AppendChild(playerData.CreateTextNode(HeroPosition.ToString()));
-        //    stats.AppendChild(currentLocation);
-
-        //    // Create the "InventoryItems" child node to hold each InventoryItem node
-        //    XmlNode inventoryItems = playerData.CreateElement("InventoryItems");
-        //    player.AppendChild(inventoryItems);
-
-        //    //// Create an "InventoryItem" node for each item in the player's inventory
-        //    //foreach (var item in Core.Hero.Inventory)
-        //    //{
-        //    //    XmlNode inventoryItem = playerData.CreateElement("InventoryItem");
-
-        //    //    XmlAttribute idAttribute = playerData.CreateAttribute("ID");
-        //    //    idAttribute.Value = item.ToString();
-        //    //    inventoryItem.Attributes.Append(idAttribute);
-
-        //    //    XmlAttribute quantityAttribute = playerData.CreateAttribute("Quantity");
-        //    //    quantityAttribute.Value = item.ToString();
-        //    //    inventoryItem.Attributes.Append(quantityAttribute);
-
-        //    //    inventoryItems.AppendChild(inventoryItem);
-        //    //}
-        //    return playerData.InnerXml; // The XML document, as a string, so we can save the data to disk
-        //}
     }
 }

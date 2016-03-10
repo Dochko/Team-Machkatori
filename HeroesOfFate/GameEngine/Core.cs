@@ -141,7 +141,7 @@
             output.AppendLine(
                 "Use \"back\" to go to the Start Screen again or\n \"quit\" to exit(the monster will find you never the less).");
 
-            this.writer.PrintCommand(output.ToString());
+            this.writer.WriteLine(output.ToString());
 
             bool check = true;
 
@@ -149,7 +149,7 @@
             {
                 try
                 {
-                    string input = this.reader.ReadCommand();
+                    string input = this.reader.ReadLine();
                     switch (input)
                     {
                         case "back":
@@ -166,7 +166,7 @@
                 }
                 catch (ArgumentException e)
                 {
-                    this.writer.PrintCommand(e.Message);
+                    this.writer.WriteLine(e.Message);
                 }
             }
         }
@@ -183,9 +183,9 @@
             chooseOption.AppendLine("Start New Adventure (start)" + Environment.NewLine);
             chooseOption.AppendLine("Commands (help)" + Environment.NewLine);
             chooseOption.AppendLine("Exit");
-            this.writer.PrintCommand(chooseOption.ToString());
+            this.writer.WriteLine(chooseOption.ToString());
 
-            string[] inputParams = this.reader.ReadCommand().Split();
+            string[] inputParams = this.reader.ReadLine().Split();
 
             switch (inputParams[0])
             {
@@ -223,15 +223,15 @@
 
             chooseOption.AppendLine("What is your hero's name and race ?");
             chooseOption.AppendLine("The available races are: Human, Elf, Orc, Dwarf or Werewolf");
-            this.writer.PrintCommand(chooseOption.ToString());
+            this.writer.WriteLine(chooseOption.ToString());
 
             bool check = true;
 
             while (check)
             {
-                string[] inputParams = this.reader.ReadCommand().Split();
                 try
                 {
+                    string[] inputParams = this.reader.ReadLine().Split();
                     switch (inputParams[0])
                     {
                         case "warrior":
@@ -258,7 +258,7 @@
                             else
                             {
                                 throw new ArgumentException(
-                                    string.Format(ExceptionConstants.CharCreationException, "race"));
+                                    string.Format(ExceptionConstants.CharCreationException, "Race"));
                             }
 
                             check = false;
@@ -318,16 +318,16 @@
                             else
                             {
                                 throw new ArgumentException(
-                                    string.Format(ExceptionConstants.CharCreationException, "race"));
+                                    string.Format(ExceptionConstants.CharCreationException, "Race"));
                             }
 
                             check = false;
                             break;
-                        
+
                         case "exit":
                             Environment.Exit(0);
                             break;
-                        
+
                         default:
                             throw new ArgumentException(
                                 string.Format(ExceptionConstants.CharCreationException, "Class"));
@@ -336,9 +336,13 @@
                     this.Merchant = new Merchant();
                     this.ImplementItems();
                 }
+                catch (IndexOutOfRangeException)
+                {
+                    this.writer.WriteLine(string.Format(ExceptionConstants.CharCreationException, "Name"));
+                }
                 catch (ArgumentException e)
                 {
-                    this.writer.PrintCommand(e.Message);
+                    this.writer.WriteLine(e.Message);
                 }
             }
         }
@@ -376,7 +380,7 @@
             }
             catch (ArgumentException e)
             {
-                this.writer.PrintCommand(e.Message);
+                this.writer.WriteLine(e.Message);
             }
         }
 
@@ -413,7 +417,7 @@
             }
             catch (ArgumentException e)
             {
-                this.writer.PrintCommand(e.Message);
+                this.writer.WriteLine(e.Message);
             }
         }
     }

@@ -5,6 +5,7 @@
     using System.Linq;
 
     using HeroesOfFate.Contracts;
+    using HeroesOfFate.GameEngine.IO;
     using HeroesOfFate.Models.Characters.Heroes;
 
     public class ShoppingScreen
@@ -15,9 +16,9 @@
 
         private readonly Core core;
 
-        private List<string> merchantItemsArea = new List<string>();
+        private readonly ConsoleReader reader = new ConsoleReader();
 
-        //private List<string> heroInventoryItemsArea = new List<string>();
+        private List<string> merchantItemsArea = new List<string>();
 
         private List<string> statusArea = new List<string>();
 
@@ -26,9 +27,11 @@
             this.core = core;
         }
 
+        // Start the shopping screen
         public void StartShopping()
         {
             this.ScreenClear();
+            DrawScreen.AddLineToBuffer(ref this.statusArea, "For more info type (help)");
             this.FillArea(this.core.Hero, this.core.Merchant);
             this.DrawShopping();
             bool check = true;
@@ -36,8 +39,7 @@
             {
                 try
                 {
-                    string[] commandArgs = Console.ReadLine()
-                        .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] commandArgs = this.reader.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     switch (commandArgs[0])
                     {
                         case "buy":
@@ -100,8 +102,24 @@
 
                             break;
 
+                        case "help":
+                            DrawScreen.AddLineToBuffer(
+                                ref this.statusArea, 
+                                "Use (buy) (item index from merchant inventory) to buy the specific item of the merchant.");
+                            
+                            DrawScreen.AddLineToBuffer(
+                                ref this.statusArea, 
+                                "Use (sell) (item index from hero inventory) to sell the specific item to the merchant.");
+                            
+                            DrawScreen.AddLineToBuffer(ref this.statusArea, "Use (back) to return to the map.");
+                            break;
+
                         case "back":
                             check = false;
+                            break;
+
+                        default:
+                            DrawScreen.AddLineToBuffer(ref this.statusArea, ExceptionConstants.InvalidCommandException);
                             break;
                     }
 
@@ -110,8 +128,10 @@
 
                     if (check == false)
                     {
-                        Console.Write("Thank you for supporting the Merchant's Guild. Visit us again !");
-                        Console.ReadKey();
+                        DrawScreen.AddLineToBuffer(ref this.statusArea, "Thank you for supporting the Merchant's Guild. Visit us again !");
+                        DrawScreen.AddLineToBuffer(ref this.statusArea, "Press any key to continue ...");
+                        this.DrawShopping();
+                        this.reader.ReadKey();
                     }
                 }
                 catch (FormatException)

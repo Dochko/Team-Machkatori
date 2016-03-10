@@ -1,6 +1,7 @@
 ﻿namespace HeroesOfFate.Models.Characters.Heroes
 {
     using HeroesOfFate.Contracts;
+    using HeroesOfFate.Models.Items.Armors;
     using HeroesOfFate.Models.Items.Weapons.TwoHWeapons;
 
     public class Mage : Hero
@@ -36,11 +37,19 @@
             return string.Format(base.ToString());
         }
 
-        protected override void StandartItems()
+        protected override sealed void StandartItems()
         {
-            IItem staff = new Staff("Wooden staff", 30, 15);
-            this.AddItemToInventory(staff);
-            this.Equip(staff);
+            IItem staff = new Staff("Wooden Staff", 30, 50);
+            this.EquipStandartItems(staff);
+
+            IItem sagesRobe = new Body("Sage's Robe", 10, 50);
+            this.EquipStandartItems(sagesRobe);
+
+            IItem softUnderwear = new Legs("Soft Underwear", 1, 5);
+            this.EquipStandartItems(softUnderwear);
+
+            IItem softBoots = new Boots("Soft Boots", 2, 10);
+            this.EquipStandartItems(softBoots);
         }
     }
 }

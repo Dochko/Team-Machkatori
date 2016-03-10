@@ -122,8 +122,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\items.txt" />
-    <Content Include="resources\map.txt" />
+    <Content Include="resources\DefaultMap.txt" />
     <Content Include="resources\merchantItems.txt" />
+    <Content Include="resources\SoftUniMap.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

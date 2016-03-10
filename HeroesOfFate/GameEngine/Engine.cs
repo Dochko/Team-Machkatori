@@ -5,6 +5,7 @@ namespace HeroesOfFate.GameEngine
     using System.Linq;
 
     using HeroesOfFate.GameEngine.Combat;
+    using HeroesOfFate.GameEngine.Shopping;
     using HeroesOfFate.Models.Characters.Heroes;
 
     public static class Engine
@@ -18,6 +19,8 @@ namespace HeroesOfFate.GameEngine
         private const char BossSymbol = 'B';
 
         private const char HeroSymbol = 'H';
+
+        private const char MerchantSymbol = 'M';
 
         private static readonly Core Core = new Core();
 
@@ -376,6 +379,13 @@ namespace HeroesOfFate.GameEngine
                     BattleScreen battle = new BattleScreen(Core, 0);
                     battle.StartBattle();
                     return 2;
+                case MerchantSymbol:
+                    DrawScreen.AddLineToBuffer(
+                        ref DrawScreen.Area2, 
+                        string.Format(ExceptionConstants.SomethingHappen, "merchant from the Merchant's Guild", "you check his wares."));
+                    ShoppingScreen shopping = new ShoppingScreen(Core);
+                    shopping.StartShopping();
+                    return 0;
                 case BossSymbol:
                     DrawScreen.AddLineToBuffer(
                         ref DrawScreen.Area2, 
@@ -396,7 +406,7 @@ namespace HeroesOfFate.GameEngine
                     DrawScreen.AddLineToBuffer(ref DrawScreen.Area2, Environment.NewLine);
                     DrawScreen.Draw(Info(), DrawScreen.Area2);
                     Environment.Exit(0);
-                    return 3;
+                    return 4;
                 default:
                     return 0;
             }

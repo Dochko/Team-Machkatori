@@ -39,7 +39,7 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException(string.Format(ExceptionConstants.NullOrNegativeException, "Merchant Gold"));
+                    throw new ArgumentOutOfRangeException(string.Format(ExceptionConstants.NullOrNegativeException, "Merchant Gold"));
                 }
 
                 this.merchantGold = value;
@@ -58,8 +58,8 @@
 
         public void BuyItemFromMerchant(IItem item)
         {
-            this.RemoveItemFromMerchant(item);
             this.MerchantGold += item.Price;
+            this.RemoveItemFromMerchant(item);
         }
 
         public void SellItemToMerchant(IItem item)

@@ -16,7 +16,7 @@
     {
         private const int LevelDefault = 1;
 
-        private const double StartingGold = 0;
+        private const double StartingGold = 500;
 
         private readonly List<IItem> equipment;
 

@@ -6,13 +6,13 @@
 
     public class Archer : Hero
     {
-        private const double DamageMinDefault = 75;
+        private const double DamageMinDefault = 30;
 
-        private const double DamageMaxDefault = 100;
+        private const double DamageMaxDefault = 60;
 
         private const double HealthDefault = 200;
 
-        private const double ArmorDefault = 100;
+        private const double ArmorDefault = 75;
 
         private const double MaxHealthDefault = HealthDefault;
 

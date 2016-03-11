@@ -1,17 +1,11 @@
-﻿potion healthPotion Megakruv 50
-potion healthPotion Megakruv 50
-armor body Vest 50 500
-armor boots Sandals 8 50
-armor gloves WinterGloves 5 15
-armor helm StrawHat 10 65
-armor legs Jeans 12 55
-armor shield TowerWall 40 300
-weapon axe Machkator 75 500
-weapon handcrossbow MonsterKiller 100 200
-weapon mace HeadSmasher 75 200
-weapon sword Ishivator 75 300
-weapon wand Criter 110 100
-weapon bow Piercer 125 325
-weapon greataxe Axevator 100 300
-weapon greatsword Swordonator 100 275
-weapon staff Apocalypse 125 350
+﻿armor body BreastPlateOfValour 110 2000
+armor boots DemonFeet 60 1200
+armor gloves HandsOfGod 55 1100
+armor helm DivineHalo 75 1400
+armor legs LegginsOfKarazhan 85 1600
+armor shield MedusasHead 90 1700
+weapon sword Machkator 150 2200
+weapon wand Critter 170 2500
+weapon bow Piercer 160 2300
+weapon greataxe Destroyer 200 2800
+weapon staff Apocalypse 250 3000

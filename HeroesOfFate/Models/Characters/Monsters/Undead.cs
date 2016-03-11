@@ -6,7 +6,7 @@
 
         private const double MonsterDamageMaxDefault = 50;
 
-        private const double MonsterHealthDefault = 100;
+        private const double MonsterHealthDefault = 120;
 
         public Undead()
             : base(MonsterHealthDefault, MonsterDamageMinDefault, MonsterDamageMaxDefault)

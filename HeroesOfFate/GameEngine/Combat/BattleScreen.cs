@@ -48,8 +48,8 @@
             this.ScreenUpdate(this.core.Hero, monster);
             this.DrawBattle();
             bool check = true;
-            int specialHitCD = 0;
-            int hardHitCD = 0;
+            int specialHitCd = 0;
+            int hardHitCd = 0;
             while (check)
             {
                 try
@@ -76,26 +76,26 @@
                                 check = this.BattleEnd(monster, check, monsterMaxHealth);
                             }
 
-                            if (specialHitCD > 0)
+                            if (specialHitCd > 0)
                             {
-                                specialHitCD--;
+                                specialHitCd--;
                             }
 
-                            if (hardHitCD > 0)
+                            if (hardHitCd > 0)
                             {
-                                hardHitCD--;
+                                hardHitCd--;
                             }
 
                             break;
                         case 2:
-                            if (hardHitCD == 0)
+                            if (hardHitCd == 0)
                             {
                                 dmg = this.HeroHit(
                                     ref monster, 
                                     rnd.Next((int)this.core.Hero.DamageMin, (int)this.core.Hero.DamageMax + 1) * 2);
                                 DrawScreen.AddLineToBuffer(
                                     ref this.battleArea2, 
-                                    "You used y and did strong hit to your opponent for " + dmg + " amount of damage!");
+                                    "You used your Crushing Attack and did strong hit to your opponent for " + dmg + " amount of damage!");
                                 if (monster.Health > 0)
                                 {
                                     check = this.MonsterDoDamage(rnd, monster, check);
@@ -105,7 +105,7 @@
                                     check = this.BattleEnd(monster, check, monsterMaxHealth);
                                 }
 
-                                hardHitCD = 2;
+                                hardHitCd = 2;
                             }
                             else
                             {
@@ -113,7 +113,7 @@
                                     ref this.battleArea2, 
                                     string.Format(
                                         "You can`t use that skill... you still have {0} turns in CD", 
-                                        hardHitCD));
+                                        hardHitCd));
                             }
 
                             break;
@@ -134,19 +134,19 @@
                             }
 
                             check = this.MonsterDoDamage(rnd, monster, check);
-                            if (specialHitCD > 0)
+                            if (specialHitCd > 0)
                             {
-                                specialHitCD--;
+                                specialHitCd--;
                             }
 
-                            if (hardHitCD > 0)
+                            if (hardHitCd > 0)
                             {
-                                hardHitCD--;
+                                hardHitCd--;
                             }
 
                             break;
                         case 4:
-                            if (specialHitCD == 0)
+                            if (specialHitCd == 0)
                             {
                                 dmg = this.HeroHit(
                                     ref monster, 
@@ -163,7 +163,7 @@
                                     check = this.BattleEnd(monster, check, monsterMaxHealth);
                                 }
 
-                                specialHitCD = 4;
+                                specialHitCd = 4;
                             }
                             else
                             {
@@ -171,7 +171,7 @@
                                     ref this.battleArea2, 
                                     string.Format(
                                         "You can`t use that skill... you still have {0} turns in CD", 
-                                        specialHitCD));
+                                        specialHitCd));
                             }
 
                             break;
@@ -234,11 +234,20 @@
 
         private bool MonsterDoDamage(Random rnd, IMonster monster, bool check)
         {
-            int dmg;
-            dmg = this.MonsterHit(this.core.Hero, rnd.Next((int)monster.DamageMin, (int)monster.DamageMax + 1));
-            DrawScreen.AddLineToBuffer(
+            var dmg = this.MonsterHit(this.core.Hero, rnd.Next((int)monster.DamageMin, (int)monster.DamageMax + 1));
+            if (dmg <= 0)
+            {
+                DrawScreen.AddLineToBuffer(
                 ref this.battleArea2,
-                "Monster hitted you for " + (dmg - (this.core.Hero.Armor * this.core.Hero.ArmorRed)) + " amount of damage!");
+                "Monster blows glanced from your heavy armor and did 0 damage!");
+            }
+            else
+            {
+                DrawScreen.AddLineToBuffer(
+                 ref this.battleArea2,
+                 "Monster hitted you for " + (dmg - (this.core.Hero.Armor * this.core.Hero.ArmorRed)) + " amount of damage!"); 
+            }
+
             if (this.core.Hero.Health <= 0)
             {
                 DrawScreen.AddLineToBuffer(ref this.battleArea2, "Game Over! You have been defeated.");
@@ -269,7 +278,15 @@
 
         private int MonsterHit(Hero hero, int damage)
         {
-            hero.Health -= damage - (hero.Armor * hero.ArmorRed);
+            if ((damage - (hero.Armor * hero.ArmorRed)) < 0)
+            {
+                damage = 0;
+            }
+            else
+            {
+                hero.Health -= damage - (hero.Armor * hero.ArmorRed);
+            }
+            
             if (hero.Health < 0)
             {
                 hero.Health = 0;

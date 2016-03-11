@@ -6,24 +6,23 @@ potion healthPotion Megakruv 50
 potion healthPotion Megakruv 50
 potion healthPotion Megakruv 50
 potion healthPotion Megakruv 50
-weapon axe Machkator 100 1000
+weapon axe Machkator 90 1000
 weapon axe Nadjache 75 400
 weapon axe SelskaSekirka 30 250
-weapon sword Excalibur 100 1000
+weapon sword Excalibur 80 1000
 weapon sword Ishivator 50 300
-weapon sword ScrapSword 30 150
-armor body RussetArmor 50 500
-armor boots Galoshi 10 50
-weapon staff Apocalypse 150 1200
+weapon sword ScrapSword 45 150
+armor body RussetArmor 60 500
+armor boots Galoshi 30 50
+weapon staff SeaSplitter 100 1200
 weapon staff Sopa  75 500
-weapon staff Bastun 30 200 
 armor helm Sallet 15 65
 armor gloves SnowBall 5 15
 armor legs Gashti 10 55
 armor shield TowerWall 40 300
 weapon wand DestroyerWand 70 100
 weapon wand MagicStick 45 500
-weapon wand Criter 15 100
-weapon bow LegolasBow 150 1100
+weapon bow LegolasBow 95 1100
 weapon bow LongBow 60 700
-weapon bow Luk 30 200
+weapon handcrossbow MonsterKiller 90 900
+weapon handcrossbow Krystachkata 55 300

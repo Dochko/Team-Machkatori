@@ -6,13 +6,13 @@
 
     public class Mage : Hero
     {
-        private const double DamageMinDefault = 75;
+        private const double DamageMinDefault = 50;
 
-        private const double DamageMaxDefault = 125;
+        private const double DamageMaxDefault = 80;
 
         private const double HealthDefault = 150;
 
-        private const double ArmorDefault = 75;
+        private const double ArmorDefault = 50;
 
         private const double MaxHealthDefault = HealthDefault;
 

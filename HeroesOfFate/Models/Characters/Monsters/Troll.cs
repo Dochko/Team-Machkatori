@@ -2,11 +2,11 @@
 {
     public class Troll : Monster
     {
-        private const double MonsterDamageMinDefault = 40;
+        private const double MonsterDamageMinDefault = 50;
 
-        private const double MonsterDamageMaxDefault = 60;
+        private const double MonsterDamageMaxDefault = 70;
 
-        private const double MonsterHealthDefault = 150;
+        private const double MonsterHealthDefault = 200;
 
         public Troll()
             : base(MonsterHealthDefault, MonsterDamageMinDefault, MonsterDamageMaxDefault)

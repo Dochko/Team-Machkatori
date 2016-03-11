@@ -79,9 +79,9 @@ namespace HeroesOfFate.GameEngine
                             throw new ArgumentException(ExceptionConstants.InvalidCommandException);
                     }
                 }
-                catch (IndexOutOfRangeException e)
+                catch (IndexOutOfRangeException)
                 {
-                    DrawScreen.AddLineToBuffer(ref DrawScreen.Area2, e.Message);
+                    DrawScreen.AddLineToBuffer(ref DrawScreen.Area2, ExceptionConstants.InvalidCommandException);
                 }
                 catch (ArgumentException e)
                 {
@@ -391,19 +391,10 @@ namespace HeroesOfFate.GameEngine
                 case MerchantSymbol:
                     DrawScreen.AddLineToBuffer(
                         ref DrawScreen.Area2, 
-                        string.Format(ExceptionConstants.SomethingHappen, "merchant from the Merchant's Guild", "you check his wares."));
-                    if (command == "up" || command == "down")
-                    {
-                        specSymbol = '║';
-                    }
-                    else
-                    {
-                        specSymbol = '═';
-                    }
-
+                        string.Format(ExceptionConstants.SomethingHappen, "the legendary merchant Kydrika", "check his divine wares."));
                     ShoppingScreen shopping = new ShoppingScreen(Core);
                     shopping.StartShopping();
-                    return 3;
+                    return 0;
 
                 case BossSymbol:
                     DrawScreen.AddLineToBuffer(

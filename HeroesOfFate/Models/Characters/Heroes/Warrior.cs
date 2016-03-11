@@ -6,13 +6,13 @@
 
     public class Warrior : Hero
     {
-        private const double DamageMinDefault = 25;
+        private const double DamageMinDefault = 20;
 
-        private const double DamageMaxDefault = 75;
+        private const double DamageMaxDefault = 50;
 
         private const double HealthDefault = 250;
 
-        private const double ArmorDefault = 125;
+        private const double ArmorDefault = 100;
 
         private const double MaxHealthDefault = HealthDefault;
 

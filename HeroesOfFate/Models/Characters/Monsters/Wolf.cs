@@ -4,9 +4,9 @@
     {
         private const double MonsterDamageMinDefault = 20;
 
-        private const double MonsterDamageMaxDefault = 40;
+        private const double MonsterDamageMaxDefault = 50;
 
-        private const double MonsterHealthDefault = 80;
+        private const double MonsterHealthDefault = 100;
 
         public Wolf()
             : base(MonsterHealthDefault, MonsterDamageMinDefault, MonsterDamageMaxDefault)

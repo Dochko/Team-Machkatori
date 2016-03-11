@@ -125,6 +125,7 @@
     <Content Include="resources\DefaultMap.txt" />
     <Content Include="resources\merchantItems.txt" />
     <Content Include="resources\SoftUniMap.txt" />
+    <Content Include="resources\SrubskaSkara.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

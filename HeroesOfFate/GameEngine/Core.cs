@@ -16,9 +16,17 @@
 
     public class Core
     {
+        private static readonly string[] HeroesDamage = { "20 - 50", "30 - 60", "50 - 80" };
+
+        private static readonly string[] HeroesHealth = { "250", "200", "150" };
+
+        private static readonly string[] HeroesArmor = { "100", "75", "50" };
+
         private readonly IArmorFactory armorFactory = new ArmorFactory();
 
         private readonly Database database = new Database();
+
+        private readonly Merchant merchant = new Merchant();
 
         private readonly IGoldChest goldChest = new GoldChest("Gold chest", 500, 50);
 
@@ -33,7 +41,7 @@
         public Core()
         {
             this.Hero = this.Hero;
-            this.Merchant = this.Merchant;
+            this.Merchant = this.merchant;
             this.Database = this.database;
         }
 
@@ -46,6 +54,16 @@
         // Method for starting the game
         public void Run()
         {
+            using (StreamReader file = new StreamReader("..\\..\\resources\\merchantItems.txt"))
+            {
+                string line;
+                while ((line = file.ReadLine()) != null)
+                {
+                    string[] inputArgs = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    this.ParseTextfileToMerchant(inputArgs);
+                }
+            }
+
             this.StartScreen();
 
             this.Hero.ChangedLevel += (sender, eventArgs) =>
@@ -85,16 +103,6 @@
                     }
                 }
             }
-
-            using (StreamReader file = new StreamReader("..\\..\\resources\\merchantItems.txt"))
-            {
-                string line;
-                while ((line = file.ReadLine()) != null)
-                {
-                    string[] inputArgs = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    this.ParseTextfileToMerchant(inputArgs);
-                }
-            }
         }
 
         public void MonsterFactory()
@@ -132,11 +140,11 @@
             Console.Clear();
             StringBuilder output = new StringBuilder();
 
-            output.AppendLine("Those are the ingame commands:");
+            output.AppendLine("Those are the in game commands:");
             output.AppendLine(
                 "-move (number of steps) (direction) - the number must be integer,\n the directions can be: right/left/up/down");
             output.AppendLine("-Info - view hero information");
-            output.AppendLine("-inventory - view the equipted items and the inventory of the hero");
+            output.AppendLine("-inventory - view the equipped items and the inventory of the hero");
             output.AppendLine("-exit - quits the current game" + Environment.NewLine);
             output.AppendLine(
                 "Use \"back\" to go to the Start Screen again or\n \"quit\" to exit(the monster will find you never the less).");
@@ -214,12 +222,28 @@
             chooseOption.AppendLine("(hero profession) (hero name) (hero race)" + Environment.NewLine);
             chooseOption.AppendLine("Choose your hero's profession:");
             chooseOption.AppendLine("The available professions are: Warrior, Archer and Mage" + Environment.NewLine);
-            chooseOption.AppendLine("The Warrior has:                 The Archer has:                 The Mage has:");
+            chooseOption.AppendLine("The Warrior has:                 The Archer has:                The Mage has:");
             chooseOption.AppendLine(
-                "Basic attack: 25 - 75            Basic attack: 75 - 100          Basic attack: 100 - 125");
-            chooseOption.AppendLine("Health: 250                      Health: 200                     Health: 150");
+                string.Format(
+                "Basic attack: {0}            Basic attack: {1}          Basic attack: {2}",
+                HeroesDamage[0], 
+                HeroesDamage[1], 
+                HeroesDamage[2]));
+            
             chooseOption.AppendLine(
-                "Armor: 125                       Armor: 100                      Armor: 75" + Environment.NewLine);
+                string.Format(
+                "Health: {0}                      Health: {1}                    Health: {2}",
+                HeroesHealth[0],
+                HeroesHealth[1],
+                HeroesHealth[2]));
+
+            chooseOption.AppendLine(
+                string.Format(
+                "Armor: {0}                       Armor: {1}                      Armor: {2}{3}",
+                HeroesArmor[0],
+                HeroesArmor[1],
+                HeroesArmor[2],
+                Environment.NewLine));
 
             chooseOption.AppendLine("What is your hero's name and race ?");
             chooseOption.AppendLine("The available races are: Human, Elf, Orc, Dwarf or Werewolf");
@@ -333,7 +357,6 @@
                                 string.Format(ExceptionConstants.CharCreationException, "Class"));
                     }
 
-                    this.Merchant = new Merchant();
                     this.ImplementItems();
                 }
                 catch (IndexOutOfRangeException)

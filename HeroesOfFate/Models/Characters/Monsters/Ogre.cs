@@ -2,11 +2,11 @@
 {
     public class Ogre : Monster
     {
-        private const double MonsterDamageMinDefault = 30;
+        private const double MonsterDamageMinDefault = 40;
 
-        private const double MonsterDamageMaxDefault = 50;
+        private const double MonsterDamageMaxDefault = 60;
 
-        private const double MonsterHealthDefault = 120;
+        private const double MonsterHealthDefault = 150;
 
         public Ogre()
             : base(MonsterHealthDefault, MonsterDamageMinDefault, MonsterDamageMaxDefault)

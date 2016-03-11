@@ -13,13 +13,13 @@
         [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1401:FieldsMustBePrivate", Justification = "Reviewed. Suppression is OK here.")]
         public static List<string> Area2 = new List<string>();
 
-        private const int AreaHeights = (40 - 2) / 2;
+        private const int MapAreaHeights = (40 - 2) / 2;
 
         public static List<string> AddMap(int[] heroPostion)
         {
             List<string> map = new List<string>();
             Random random = new Random();
-            int result = random.Next(1, 3);
+            int result = random.Next(1, 4);
             StreamReader file = StreamReader.Null;
             switch (result)
             {
@@ -33,6 +33,12 @@
                     file = new StreamReader("..\\..\\resources\\SoftUniMap.txt");
                     heroPostion[0] = 6;
                     heroPostion[1] = 24;
+                    break;
+
+                case 3:
+                    file = new StreamReader("..\\..\\resources\\SrubskaSkara.txt");
+                    heroPostion[0] = 5;
+                    heroPostion[1] = 9;
                     break;
             }
             
@@ -52,9 +58,9 @@
         {
             areaBuffer.Insert(0, line);
 
-            if (areaBuffer.Count == AreaHeights)
+            if (areaBuffer.Count == MapAreaHeights)
             {
-                areaBuffer.RemoveAt(AreaHeights - 1);
+                areaBuffer.RemoveAt(MapAreaHeights - 1);
             }
         }
 
@@ -65,20 +71,20 @@
             // Draw the area divider
             for (int i = 0; i < Console.BufferWidth; i++)
             {
-                Console.SetCursorPosition(i, AreaHeights);
+                Console.SetCursorPosition(i, MapAreaHeights);
                 Console.Write('=');
             }
 
-            int currentLine = AreaHeights - 1;
-
+            int currentLine = MapAreaHeights - 1;
+            
             // draw first area
             for (int i = 0; i < areaSelect1.Count; i++)
             {
                 Console.SetCursorPosition(0, currentLine - (i + 1));
                 Console.WriteLine(areaSelect1[i]);
             }
-
-            currentLine = AreaHeights * 2;
+            
+            currentLine = MapAreaHeights * 2;
 
             // draw second area
             for (int i = 0; i < areaSelect2.Count; i++)

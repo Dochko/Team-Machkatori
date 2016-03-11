@@ -2,11 +2,11 @@
 {
     public class Goblin : Monster
     {
-        private const double MonsterDamageMinDefault = 10;
+        private const double MonsterDamageMinDefault = 20;
 
-        private const double MonsterDamageMaxDefault = 30;
+        private const double MonsterDamageMaxDefault = 40;
 
-        private const double MonsterHealthDefault = 60;
+        private const double MonsterHealthDefault = 80;
 
         public Goblin()
             : base(MonsterHealthDefault, MonsterDamageMinDefault, MonsterDamageMaxDefault)
